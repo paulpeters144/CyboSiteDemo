@@ -1,0 +1,637 @@
+﻿﻿<!DOCTYPE>
+
+<html>
+
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="Img/frothyLogo.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://uploads-ssl.webflow.com/5c3b94f95c550c52154c4141/css/tlf-staging.webflow.97b957c9b.min.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175476770-1"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-175476770-1');
+    </script>
+
+    <title>CyboShell</title>
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        @font-face {
+            font-family: 'vt';
+            src: URL('lib/fonts/VT323.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'mc';
+            src: URL('lib/fonts/monaco.ttf') format('truetype');
+        }
+
+        body {
+            background-color: #232323;
+            color: antiquewhite;
+            color: black;
+            font-family: mc, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 28px;
+            line-height: 24px;
+        }
+
+        #textContainerOne {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 50px;
+        }
+
+        .ui-autocomplete {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 160px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            list-style: none;
+            font-size: 20px;
+            font-family: vt, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: left;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+        }
+
+        .ui-autocomplete>li>div {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #333333;
+            white-space: nowrap;
+        }
+
+        .ui-state-hover,
+        .ui-state-active,
+        .ui-state-focus {
+            text-decoration: none;
+            color: #262626;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .ui-helper-hidden-accessible {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .navbar {
+            background: #0e1216;
+        }
+
+        /*.navbar-btn {
+            box-shadow: none;
+            outline: none !important;
+            border: none;
+        }*/
+
+        .line {
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed #ddd;
+            margin: 40px 0;
+        }
+
+        /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background: #0e1216;
+            color: antiquewhite;
+            transition: all 0.3s;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: antiquewhite;
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: black;
+            background: antiquewhite;
+        }
+
+        #sidebar ul li.active>a,
+        a[aria-expanded="true"] {
+            color: black;
+            background: antiquewhite;
+        }
+
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+
+        .dropdown-toggle::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background-color: #0e1216;
+            color: antiquewhite;
+        }
+
+        ul.CTAs {
+            padding: 20px;
+        }
+
+        ul.CTAs a {
+            text-align: center;
+            font-size: 0.9em !important;
+            display: block;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        a.download {
+            background: antiquewhite;
+            color: #7386D5;
+        }
+
+        a.article,
+        a.article:hover {
+            color: black;
+            background: antiquewhite;
+        }
+
+        /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+        #content {
+            width: 100%;
+            padding: 20px;
+            min-height: 100vh;
+            transition: all 0.3s;
+        }
+
+        /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+        @media (max-width: 768px) {
+            #sidebar {
+                margin-left: -250px;
+            }
+
+            #sidebar.active {
+                margin-left: 0;
+            }
+
+            #sidebarCollapse span {
+                display: none;
+            }
+        }
+
+        #mySidenav {
+            width: 250px;
+        }
+
+        /* Fixed sidenav, full height */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a,
+        .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* On mouse-over */
+        .sidenav a:hover,
+        .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 200px;
+            /* Same as the width of the sidenav */
+            font-size: 20px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #262626;
+            padding-left: 8px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+
+        /* Some media queries for responsiveness */
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="mySidenav" class="sidenav">
+        <br />
+        <br />
+        <button style="font-family: mc; font-size: 30px; color: antiquewhite;" class="dropdown-btn">Cybos
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('Nueric')">Nueric</a>
+                <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('Bomake')">Bomake</a>
+                <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('Seer')">Seer</a>
+                <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('GNA-Bot')">GNA-Bot</a>
+        </div>
+        <button style="font-family: mc; font-size: 30px; color: antiquewhite;" class="dropdown-btn">Companies
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('GoVue')">GoVue</a>
+        </div>
+        <button style="font-family: mc; font-size: 30px; color: antiquewhite;" class="dropdown-btn">Characters
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('Seren')">Seren Haskell</a>
+                <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('BugZi')">BugZi</a>
+        </div>
+        <button style="font-family: mc; font-size: 30px; color: antiquewhite;" class="dropdown-btn">Battle Chips
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+            onclick="closeAllOpenedSideNavs('Broken Gears')">Broken Gears</a>
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+            onclick="closeAllOpenedSideNavs('Stick Splash')">Stick Splash</a>
+        </div>
+        <button style="font-family: mc; font-size: 30px; color: antiquewhite;" class="dropdown-btn">Misc.
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a style="font-family: mc; font-size: 25px; color: antiquewhite;"
+                onclick="closeAllOpenedSideNavs('CyboShell')">CyboShell</a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark" style="margin-top: 20px; color: white;">
+        <div class="container" style="display:block">
+            <br />
+            <br />
+            <span id="leftHam"
+                style="color:white; font-size:28px; cursor:pointer; margin: 0px 98% 0 0; position:absolute;"
+                onclick="openCloseNav()">&#9776;</span>
+            <span id="rightHam" style="color:white; font-size:28px; cursor:pointer; margin-left: 95%; margin-bottom: 3px;"
+                data-toggle="collapse" data-target="#navbar1">&#9776;</span>
+
+
+            <div class="collapse navbar-collapse" id="navbar1" style="justify-content: center;">
+                <ul class="navbar-nav nav nav-fill w-1">
+                    <li>
+
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"
+                            style="font-family: mc; font-size: 38px; color: antiquewhite;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cybodex"
+                            style="color: aquamarine; font-family: mc; font-size: 38px;">CyboDex</a>
+                    </li>
+                    <li class="nav-item">
+                        <a runat="server" data-toggle="modal" data-target="#modalPush" class="nav-link" href="#"
+                            Style="color: antiquewhite; font-family: mc; font-size: 38px;">Kickstarter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <br />
+
+    <!--Modal: modalPush-->
+    <div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content" style="background-color: gainsboro;">
+                <!--Header-->
+                <div class="modal-header d-flex justify-content-center">
+                    <img style="border-radius: 3%; border: 4px solid black;" src="Img/kickstarter.png" />
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <center>
+                        <p>The Kickstarter begins in... </p>
+                        <p id="countdown" style="font-size:40px; font-weight:600;">59d 12h 15m 23s</p>
+                        <p>Enter your email to get the latest updates!</p>
+                    </center>
+                    <center>
+                        <form>
+                        </form>
+                        <form onsubmit="return submitInfo('email', document.getElementById('email').value)">
+                            <input id="email" type="text" placeholder="please enter a email..."
+                                pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
+                                title="Please enter a valid email address." name="email">
+                            <input type="submit">
+                        </form>
+                    </center>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer flex-center">
+                    <span></span>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: modalPush-->
+
+    <div class="container-fluid" style="margin-top:20px; max-width: 800px; min-width: 320px">
+        <div class="alert alert-dark">
+            <div id="desc-content"></div>
+        </div>
+    </div>
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <footer class="py-4 bg-dark text-white-50" width="100%">
+        <div class="text-center">
+            <small
+                style="font-family: mc, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 24px;">Copyright
+                &copy; Frothy Games</small>
+            <i class="fa fa-gamepad"></i>
+        </div>
+    </footer>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
+        function submitInfo(emailId, email) {
+            document.getElementById(emailId).value = "";
+            let postUrl = window.location.origin + "/email";
+            $.ajax({
+                url: postUrl,
+                method: 'POST',
+                data: { clientEmail: email }
+            }).done(function (data) {
+                console.log(data);
+                if (data.success) {
+                    if (data.message === "GO") {
+                        $(document).ready(function () {
+                            Swal.fire({
+                                position: 'top-end',
+                                background: 'lightgreen',
+                                imageUrl: 'Img/hurrayrobot.gif',
+                                imageWidth: 160,
+                                imageHeight: 200,
+                                title: 'Email saved\nWatch out for game updates!',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        });
+
+                        $('#modalPush').modal('hide');
+                    } else if (data.message === "NOGO") {
+                        $(document).ready(function () {
+                            Swal.fire({
+                                position: 'top-end',
+                                background: 'pink',
+                                imageUrl: 'Img/uhohrobot.gif',
+                                imageWidth: 160,
+                                imageHeight: 200,
+                                title: 'Email already in database!',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        });
+
+                    }
+                }
+            }).fail(function () {
+                console.log('failed...');
+            });
+            return false;
+        }
+
+        function closeAllOpenedSideNavs(str) {
+
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+                var dropdownContent = dropdown[i].nextElementSibling;
+                dropdownContent.style.display = "none";
+            }
+
+            var elems = document.querySelectorAll(".active");
+            if (elems !== null) {
+                elems.forEach(element => {
+                    element.classList.remove("active");
+                });
+            }
+
+            showContent(str);
+            window.scrollTo(0, 0);
+        }
+
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+    <script src="js/sweetalert2min.js"></script>
+    <script src="js/siteScript.js"></script>
+</body>
+
+</html>

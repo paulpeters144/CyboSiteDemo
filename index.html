@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/png" href="Img/frothyLogo.png" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175476770-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-175476770-1');
+	</script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<link href="https://uploads-ssl.webflow.com/5c3b94f95c550c52154c4141/css/tlf-staging.webflow.97b957c9b.min.css"
+		rel="stylesheet" type="text/css" />
+	<script src="js/sweetalert2min.js"></script>
+	<title>CyboShell</title>
+	<style>
+		@font-face {
+			font-family: 'vt';
+			src: URL('lib/fonts/monaco.ttf') format('truetype');
+		}
+
+		body {
+			background-color: #232323;
+			color: antiquewhite;
+			color: black;
+			font-family: vt, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			font-size: 28px;
+		}
+
+		#textContainerOne {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		h2 {
+			font-size: 50px;
+		}
+
+		img {
+			/*border-radius: 1%;
+            border: 2px solid black;*/
+		}
+
+		.navbar {
+			background: #0e1216;
+		}
+
+		.bordedImg {
+			border: 4px solid black;
+			border-radius: 2%;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+			function displayWindowSize() {
+				var w = window.innerWidth;
+
+				if (w > 575) {
+					document.getElementById("rightHam").style.display = "none";
+				} else {
+					document.getElementById("rightHam").style.display = "";
+				}
+			}
+			window.addEventListener("resize", displayWindowSize);
+			displayWindowSize();
+		};
+	</script>
+</head>
+
+<body>
+		<nav class="navbar navbar-expand-sm fixed-top navbar-dark" style="margin-top: 0x; color: white;">
+			<div class="container" >
+				<br />
+				<br />
+				<br />
+				<span id="rightHam" style="color:white; font-size:28px; cursor:pointer; margin-left: 95%; 
+				margin-top:3px;" data-toggle="collapse" data-target="#navbar1">&#9776;</span>
+				</a>
+				<div class="collapse navbar-collapse" id="navbar1">
+					<ul class="navbar-nav nav nav-fill w-100">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-family: vt; font-size: 38px; color: aquamarine;">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="CyboDex.html"
+								style="color: antiquewhite; font-family: vt; font-size: 38px;">CyboDex</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="GameDemo.html"
+								style="color: antiquewhite; font-family: vt; font-size: 38px;">Game Demo</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<br />
+		<br />
+		<div style="background-color: black; max-width: 55em; margin: auto; border-radius: 1%;">
+			<img src="Img/SiteMainPic6.png" class="rounded mx-auto d-block img-fluid" />
+		</div>
+		<br />
+		<br />
+		<div class="container">
+			<div class="alert alert-dark">
+				<div class="row">
+					<div class="col-lg-5">
+						<h2>Iode City</h2>
+						<p>
+							A city full of robots and humans attempting cohabitation.
+							The Age of Intelligence began when robots started to reason, dream, and form their
+							goals without the aid of humans. The Age of Intelligence ended just over a century ago,
+							thanks to
+							cybos - robots built alongside human ingenuity. However, the AI of a fallen world
+							left a residue in archaic OS's still used in the present, threatening the chaos of
+							the past century. Every passing day the question is still left unanswered. Will
+							humans and robots ever understand each other? Is cohabitation is possible? Slowly,
+							small glimmers of the answer form as the future and its technological
+							advancements move closer and closer to the present.
+							<br />
+							<br />
+						</p>
+					</div>
+					<div class="col-lg-7">
+						<img class="bordedImg" src="Img/citySkyline.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="container">
+			<div class="alert alert-dark">
+				<div class="row">
+					<div class="col-lg-5">
+						<h2>The Game</h2>
+						<p>
+							Play the story mode and join a company to help in the struggle against the residue of AI.
+							Help your company make a profit to protect it against the monopoly games of larger
+							conglomerates. Face
+							AI robots, or users sent from companies to gain an edge in the seemingly free market.
+							<br />
+							<br />
+							Or play the online mode and fight other players in tactical matches. Control your cybos and
+							deploy
+							strategies from your stratpack. Upgrade cybos with dependency chips, or hack opposing cybos
+							to disrupt your opponent's strategy. In the online mode, you can climb the ranks of online
+							play
+							to become the best CyboShell user in the world.
+
+							<br />
+							<br />
+						</p>
+					</div>
+					<div class="col-lg-7">
+						<img class="bordedImg" src="Img/gameMatch.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<div style="width: 100%;">
+			<div class=""
+				style="background-image: url('./Img/citySkyline.png'); height: 580px; border-top: 4px solid antiquewhite; border-bottom: 4px solid antiquewhite">
+				<center>
+					<h2 class="text-center" style="margin-top:105px; color:antiquewhite">Get the latest updates!</h2>
+					<div class="col-xl-4">
+						<form>
+						</form>
+						<form onsubmit="return submitInfo('email2', document.getElementById('email2').value)">
+							<input id="email2" type="text" placeholder="please enter a email..."
+								pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
+								title="Please enter a valid email address." name="email">
+							<input type="submit">
+						</form>
+					</div>
+				</center>
+				<br />
+				<br />
+			</div>
+		</div>
+		<br />
+		<br />
+		<div class="container">
+			<div class="alert alert-dark">
+				<div class="container-override">
+					<div>
+						<h2 class="text-left">Gameplay</h2>
+					</div>
+					<div class="screenshots-container">
+						<div class="w-layout-grid grid">
+							<a href="#" id="w-node-e2d9ad57ebc7-404c413b" class="w-inline-block w-lightbox">
+								<img class="bordedImg" src="Img/battleScene1.png" alt="Fire punch in the dark forest"
+									srcset="Img/battleScene1.png 800w, Img/battleScene1.png 1024w" />
+								<script type="application/json" class="w-json">{
+                           "items": [
+                             {
+                               "url": "Img/battleScene1.gif"
+                             }
+                           ],
+                           "group": "screen gameplay"
+                           }
+                                </script>
+							</a>
+							<a href="#" id="w-node-e2d9ad57ebc9-404c413b" class="w-inline-block w-lightbox">
+								<img class="bordedImg" src="Img/stratPakScene.png" alt="Fire punch in the dark forest"
+									srcset="Img/stratPakScene.png 800w, Img/stratPakScene.png 1024w" />
+								<script type="application/json" class="w-json">{
+                           "items": [
+                             {
+                               "url": "Img/stratPakScene.gif"
+                             }
+                           ],
+                           "group": "screen gameplay"
+                           }
+                                </script>
+							</a>
+							<a href="#" id="w-node-e2d9ad57ebcb-404c413b" class="w-inline-block w-lightbox">
+								<img class="bordedImg" src="Img/walkingScene.png" alt="Fire punch in the dark forest"
+									srcset="Img/walkingScene.png 800w, Img/walkingScene.png 1024w" />
+								<script type="application/json" class="w-json">{
+                           "items": [
+                             {
+                               "url": "Img/walkingScene.gif"
+                             }
+                           ],
+                           "group": "screen gameplay"
+                           }
+                                </script>
+							</a>
+							<a href="#" id="w-node-e2d9ad57ebcd-404c413b" class="w-inline-block w-lightbox">
+
+
+								<img class="bordedImg" src="Img/battleScene2.png" alt="Fire punch in the dark forest"
+									srcset="Img/battleScene2.png 800w, Img/battleScene2.png 1024w" />
+								<script type="application/json" class="w-json">{
+                           "items": [
+                             {
+                               "url": "Img/battleScene2.gif"
+                             }
+                           ],
+                           "group": "screen gameplay"
+                           }
+                                </script>
+							</a>
+						</div>
+						<div>
+							<span>
+								<a href="#"><i class="fa fa-facebook-square"
+										style="font-size: 42px; padding: 0 10px;"></i></a>
+								<a href="#"><i class="fa fa-twitter" style="font-size: 42px; padding: 0 10px;"></i></a>
+								<a href="#"><i class="fa fa-youtube-square"
+										style="font-size: 42px; padding: 0 10px;"></i></a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5c3b94f95c550c52154c4141"
+			type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+		<script src="https://uploads-ssl.webflow.com/5c3b94f95c550c52154c4141/js/webflow.b4de5a28a.js"
+			type="text/javascript"></script>
+		<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+			<div class="container text-center">
+				<small>Copyright &copy; Frothy Games</small>
+				<i class="fa fa-gamepad"></i>
+			</div>
+		</footer>
+</body>
+
+</html>

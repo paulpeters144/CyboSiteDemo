@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="Img/frothyLogo.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://uploads-ssl.webflow.com/5c3b94f95c550c52154c4141/css/tlf-staging.webflow.97b957c9b.min.css"
+        rel="stylesheet" type="text/css" />
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js-game-demo/main.js"></script>
+    <script type="text/javascript" src="lib/funcLib.js"></script>
+    <script type="text/javascript" src="lib/keyboard.js"></script>
+    <script type="text/javascript" src="js-game-demo/Classes.js"></script>
+    <script type="text/javascript" src="js-game-demo/states/begin-story.js"></script>
+    <script type="text/javascript" src="js-game-demo/states/console-app.js"></script>
+    <script type="text/javascript" src="js-game-demo/states/open-screen.js"></script>
+    <script type="text/javascript" src="js-game-demo/states/story-mode.js"></script>
+    <script type="text/javascript" src="js-game-demo/states/staging-area.js"></script>
+    <script type="text/javascript" src="js-game-demo/helpers/cmd-tree.js"></script>
+    <script type="text/javascript" src="lib/pixi.js"></script>
+    <script type="text/javascript" src="lib/PIXI.TextInput.js"></script>
+    <title>CyboShell</title>
+    <!-- TODO: Make font usage more scalable.. someday --->
+    <style type="text/css">
+        @font-face {
+            font-family: 'vt';
+            src: URL('lib/fonts/monaco.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Monospaced';
+            src: URL('lib/fonts/FiraCode-Regular.ttf') format('truetype');
+        }
+
+        body {
+            background-color: #232323;
+            color: antiquewhite;
+            color: black;
+            font-family: vt, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 28px;
+        }
+
+        #textContainerOne {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 50px;
+        }
+
+        .navbar {
+            background: #0e1216;
+        }
+
+        .bordedImg {
+            border: 4px solid black;
+            border-radius: 2%;
+        }
+
+        #game {
+            border: 3px solid lawngreen;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #aaa;
+            background-image: url('Img/siteBackground.jpg');
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+
+        canvas {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+            display: block;
+            border: 2px solid greenyellow;
+
+        }
+    </style>
+    <div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content" style="background-color: gainsboro;">
+                <!--Header-->
+                <div class="modal-header d-flex justify-content-center">
+                    <img style="border-radius: 3%; border: 4px solid black;" src="Img/kickstarter.png" />
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <center>
+                        <p>The Kickstarter begins in... </p>
+                        <p id="countdown" style="font-size:40px; font-weight:600;">59d 12h 15m 23s</p>
+                        <p>Enter your email to get the latest updates!</p>
+                    </center>
+
+                    <!-- <button class="float-right" style="height: 40px;" onclick=submitInfo()>Submit</button> -->
+
+                    <script>
+                        function myFunction() {
+                            alert("The form was submitted");
+                        }
+                    </script>
+                    <form>
+                    </form>
+                    <form onsubmit="return submitInfo('email1', document.getElementById('email1').value)">
+                        <input id="email1" type="text" placeholder="please enter a email..."
+                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
+                            title="Please enter a valid email address." name="email">
+                        <input type="submit">
+                    </form>
+                    <script>
+
+                        function submitInfo(emailId, email) {
+                            document.getElementById(emailId).value = "";
+                            let postUrl = window.location.origin + "/email";
+                            $.ajax({
+                                url: postUrl,
+                                method: 'POST',
+                                data: { clientEmail: email }
+                            }).done(function (data) {
+                                console.log(data);
+                                if (data.success) {
+                                    if (data.message === "GO") {
+                                        $(document).ready(function () {
+                                            Swal.fire({
+                                                position: 'top-end',
+                                                background: 'lightgreen',
+                                                imageUrl: 'Img/hurrayrobot.gif',
+                                                imageWidth: 160,
+                                                imageHeight: 200,
+                                                title: 'Email saved\nWatch out for game updates!',
+                                                showConfirmButton: false,
+                                                timer: 3000
+                                            })
+                                        });
+
+                                        $('#modalPush').modal('hide');
+                                    } else if (data.message === "NOGO") {
+                                        $(document).ready(function () {
+                                            Swal.fire({
+                                                position: 'top-end',
+                                                background: 'pink',
+                                                imageUrl: 'Img/uhohrobot.gif',
+                                                imageWidth: 160,
+                                                imageHeight: 200,
+                                                title: 'Email already in database!',
+                                                showConfirmButton: false,
+                                                timer: 3000
+                                            })
+                                        });
+
+                                    }
+                                }
+                            }).fail(function () {
+                                console.log('failed...');
+                            });
+                            return false;
+                        }
+
+                    </script>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer flex-center">
+                    <span></span>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: modalPush-->
+    
+
+    <p style="margin-top: -30px;">...</p>
+</body>
+
+</html>
