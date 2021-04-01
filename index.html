@@ -186,11 +186,11 @@
 					<div class="col-xl-4">
 						<form>
 						</form>
-						<form onsubmit="return submitInfo('email2', document.getElementById('email2').value)">
+						<form <!--onsubmit="return submitInfo('email2', document.getElementById('email2').value)"-->>
 							<input id="email2" type="text" placeholder="please enter a email..."
 								pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
 								title="Please enter a valid email address." name="email">
-							<input type="submit">
+							<input type="submit" onclick='alert("nothing yet...")'>
 						</form>
 					</div>
 				</center>
